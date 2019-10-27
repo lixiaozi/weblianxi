@@ -1,0 +1,65 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7549827",
+      "name": "发布",
+      "font_class": "RectangleCopy",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
+      "icon_id": "7549844",
+      "name": "运营",
+      "font_class": "RectangleCopy1",
+      "unicode": "e6ab",
+      "unicode_decimal": 59051
+    },
+    {
+      "icon_id": "7549846",
+      "name": "中枢",
+      "font_class": "RectangleCopy2",
+      "unicode": "e6ac",
+      "unicode_decimal": 59052
+    },
+    {
+      "icon_id": "7549847",
+      "name": "服务",
+      "font_class": "RectangleCopy3",
+      "unicode": "e6ad",
+      "unicode_decimal": 59053
+    },
+    {
+      "icon_id": "7551810",
+      "name": "报废单",
+      "font_class": "RectangleCopy4",
+      "unicode": "e6bb",
+      "unicode_decimal": 59067
+    },
+    {
+      "icon_id": "7552710",
+      "name": "风控",
+      "font_class": "RectangleCopy5",
+      "unicode": "e6d2",
+      "unicode_decimal": 59090
+    },
+    {
+      "icon_id": "7553666",
+      "name": "权益发放工具",
+      "font_class": "RectangleCopy6",
+      "unicode": "e6e6",
+      "unicode_decimal": 59110
+    },
+    {
+      "icon_id": "7733537",
+      "name": "物流",
+      "font_class": "RectangleCopy7",
+      "unicode": "e6eb",
+      "unicode_decimal": 59115
+    }
+  ]
+}

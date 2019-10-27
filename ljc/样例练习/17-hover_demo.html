@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hover</title>
+    <style>
+    .div1{
+        height: 300px;
+        width: 400px;
+        background:blueviolet;
+    }
+    .div1:hover{
+        background-color: red;
+    }
+    .div2{
+        border: 2px solid yellow;
+          /* height: 0px;
+          overflow: hidden; */
+        display: none;
+    }
+    .div1:hover .div2{
+        display:block;  /*inline-block 显示作用*/
+    }
+    </style>
+</head>
+<body>
+    <div class="div1">
+        <div class="div2">
+            <p>Hello world!</p>
+            <p>Wecreat!</p>
+            <p>1234</p>
+            <p>abcd</p>
+        </div>
+    </div>
+</body>
+</html>
