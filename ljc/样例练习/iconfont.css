@@ -1,0 +1,13 @@
+.div1{
+    height: 200px;
+    width: 200px;
+    background-color: red;
+  }
+  .span1{
+    color: red;
+    font-size: 10px !important;
+  }
+  .span2{
+    color:black;
+    font-size: 10px !important;
+  }

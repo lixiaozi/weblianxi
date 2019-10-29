@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米商城</title>
+    <style>
+        body{
+            margin: 0;
+            font-size: 14px;
+            background-color: #f9f9f9;
+        }
+        p{
+            margin: 0;
+        }
+        h4{
+            margin:0;
+        }
+        a{
+            text-decoration: none;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .container{
+            width: 854px;
+            height: 500px;
+            background-color:white;
+            margin: 0 auto;
+            margin-top: 40px;
+            padding: 0 30px 30px;
+        }
+        .logo{
+            width: 49px;
+            height: 48px;
+            background-image: url("../小米注册/milogo.png");
+            margin: 0 auto;
+            display: block;
+            cursor:default;
+            padding-bottom: 40px;
+            background-repeat: no-repeat;
+        }
+        .info{
+            font-size: 30px;
+            text-align: center;
+        }
+        .container .form{
+            width: 332px;
+            padding: 30px 0;
+            margin: 0 auto;
+            font-size: 14px;
+        }
+        .container .form h4{
+            text-align: left;
+            font-weight: normal;
+        }
+        .container .form .sr-box{
+            height: 40px;
+            border: 1px solid #e8e8e8;
+            color: #555;
+            padding-left: 14px;
+            line-height: 40px;
+        }
+            .form .sr-box p{
+        width: 275px;
+        border-right: 1px solid #e8e8e8;
+        float: left;
+        }
+        .form .sr-box i{
+        float: left;
+        display: block;
+        width: 16px;
+        height: 16px;
+        margin: 11px 12px 14px 12px;
+        background-image: url("../小米注册/icon_user.png")
+        }
+      .container .form .t1{
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .container .cy-box{
+            height: 40px;
+            border: 1px solid #e8e8e8;
+        }
+        .container .cy-box .left{
+            height: 40px;
+            width: 70px;
+            border-right: 1px solid #e8e8e8;
+            float: left;
+        }
+        .cy-box .left p{
+            height: 40px;
+            line-height: 40px;
+            margin-left: 10px;
+            display: inline-block;
+        }
+        .cy-box .left .jt{
+             border: 8px solid;
+             border-color:#e8e8e8 transparent transparent transparent;
+             line-height: 40px;
+             display: inline-block;
+             /* margin-top: 25px; */
+        }
+        .cy-box .right{      
+         width: 201px;
+         height: 40px;
+        float: left;
+        }
+        .cy-box .right input{
+         border: 0;
+         outline: none;
+         height: 20px;
+         line-height: 20px;
+         padding: 10px;
+    }
+    .form .btn input{
+        background-color: #ff6700;
+        width: 330px;
+        color: #ffffff;
+         height: 42px;
+        margin: 0 auto;
+         line-height: 42px;
+      text-align: center;
+      margin-top: 20px;
+      border: 1px solid rgba(186,186,186,0.3);
+    }
+    .container .msg{
+        text-align: center;
+        color: #9d9d9d;
+        margin-top: 40px;
+    }
+    .container .msg a{
+        color: #333;
+        font-weight: bold;
+    }
+    .footer{
+        margin-top: 10px;
+    }
+   .footer ul{
+       text-align: center;
+   }
+   .footer li{
+       display: inline-block;
+       color: #757575;
+   }
+   .footer li span{
+       margin: 0 10px;
+   }
+   .link li span:hover{
+    color: #333;
+      cursor: pointer;
+   }
+.link li .active{
+       color: #333;
+   }
+   .footer .intro{
+       text-align: center;
+       color: #9d9d9d;
+
+
+     
+   }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <a href="javascript:void(0)"></a>
+        </div>
+        <div class="info">注册小米帐号</div>
+        <div class="form">
+            <div><h4>国家/地区</h4></div>
+            <div class="sr">
+                <div class="sr-box">
+                    <p>中国</p>
+                    <i></i>
+                </div>
+            </div>
+            <div class="t1">成功注册帐号后，国家/地区将不能被修改</div>
+            <div><h4>手机号码</h4></div>
+            <div class="cycode">
+                <div class="cy-box">
+                    <div class="left">
+                        <p>+86</p>
+                        <i class="jt"></i>
+                    </div>
+                    <div class="right">
+                            <input type="text" placeholder="请输入手机号码">
+                    </div>
+                </div>
+            </div>
+            <div class="btn">
+                <input type="button" value="立即注册">
+            </div>
+        </div>
+        <div class="msg">
+                已阅读并同意：小米
+                <a href="">用户协议</a>
+                和 
+                <a href="">隐私政策</a> 
+        </div>
+    </div>
+    <div class="footer">
+        <div class="link">
+            <ul>
+                <li class="active"><span>繁体</span>|</li>
+                <li><span> 简体</span>|</li>
+                <li><span>English</span>|</li>
+                <li><span>常见问题</span></li>
+            </ul>
+        </div>
+        <div class="intro">小米公司版权所有-京ICP备10046444-京公网安备11010802020134号-京ICP证110507号</div>
+    </div>
+    
+</body>
+</html>
