@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        width: 700px;
+        margin: 0 auto;
+        height: 300px;
+        border: 1px solid black;
+        margin-top: 40px;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .box .nav {
+        height: 70px;
+        background-color: black;
+    }
+
+    .nav li {
+        height: 70px;
+        width: 100px;
+        float: left;
+        color: #fff;
+        line-height: 70px;
+        text-align: center;
+    }
+
+    .ct-item {
+        display: none;
+    }
+
+    .nav .active {
+        color: black;
+        background-color: #ddd;
+    }
+
+    .content .active {
+        display: block;
+    }
+    .content{
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="nav">
+            <ul>
+                <li class="active">yi</li>
+                <li>er</li>
+                <li>san</li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="ct-item active">
+                <ul>
+                    <li>1</li>
+                    <li>1</li>
+                    <li>1</li>
+                </ul>
+            </div>
+            <div class="ct-item">
+                <ul>
+                    <li>2</li>
+                    <li>2</li>
+                    <li>2</li>
+                </ul>
+            </div>
+            <div class="ct-item">
+                <ul>
+                    <li>3</li>
+                    <li>3</li>
+                    <li>3</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var oNav = document.getElementsByClassName("nav")[0].getElementsByTagName("li");
+        // console.log(oNav);
+        var item = document.getElementsByClassName("ct-item");
+        // console.log(item);
+        for (i = 0; i < oNav.length; i++) {
+            oNav[i].index = i;
+            oNav[i].onclick = function () {
+                for (j = 0; j < oNav.length; j++) {
+                    oNav[j].className = "";
+                    item[j].classList.remove("active");
+                }
+                // oNav[j].classList.add("active");
+                this.className = "active";
+                item[this.index].classList.add("active");
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

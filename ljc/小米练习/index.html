@@ -104,7 +104,10 @@
              border-color:#e8e8e8 transparent transparent transparent;
              line-height: 40px;
              display: inline-block;
-             /* margin-top: 25px; */
+             /* 要做相对定位 */
+             position: absolute;
+             margin-top: 16px;
+             margin-left: 5px;
         }
         .cy-box .right{      
          width: 201px;
@@ -155,7 +158,7 @@
     color: #333;
       cursor: pointer;
    }
-.link li .active{
+    .link .active{      /* 用li 选择器级别较低*/
        color: #333;
    }
    .footer .intro{

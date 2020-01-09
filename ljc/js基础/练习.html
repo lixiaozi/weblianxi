@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <!-- 1.编写程序．通过用户输入的年龄判断是哪个年龄段的人
+        （儿童：年龄＜14；青少年：14<=年龄＜24；青年：24<年龄＜40; 中年：40＜=年龄＜60; 老年：年龄>=60）
+        ，并在页面上输出判断结果。 -->
+        <!-- <script>
+        var age = prompt("请输入用户年龄：");
+        if(age<14){
+            document.write("儿童");
+        }else if(14<=age && age<24){
+            document.write("青少年");
+        }else if(24<=age && age<40){
+            document.write("青年");
+        }else if(40<=age && age<60){
+            document.write("中年");
+        }else if(age>=60){
+            document.write("老年");
+        } 
+        </script> -->
+        <!-- 2.编写程序，根据用户输入的一个数字(0~6)．
+        通过警示对话框显示对应的星期几(0: 星期日; 1: 星期一;……6: 星期六;)。 -->
+        <!-- <script>
+            var num = prompt("请输入一个0-6的数字：");
+             num = parseInt(num);
+            switch(num){
+                case "0":alert("星期日");break;
+                case '1':alert("星期一");break;
+                case 2:alert("星期二");break;
+                case 3:alert("星期三");break;
+                case 4:alert("星期四");break;
+                case 5:alert("星期五");break;
+                case 6:alert("星期六");break;
+                default:console.log("false");
+            }
+        </script> -->
+        <!-- 编写程序，计算10!(即 1*2*3＊·…10）的结果(10的阶乘) -->
+        <!-- <script>
+        var num = prompt("输入想计算阶乘的数字：");
+        num = parseInt(num);
+        for(sum=1,i=1;i<=num;i++){
+            sum *= i;
+            // return sum;
+        }
+         document.write(num+"的阶乘是"+sum);
+        </script> -->
+        <!-- 编写程序，计算 1!+2!+3!+…..＋10！的结果。 -->
+        <!-- <script>
+                var num = prompt("输入想计算阶乘和的数字：");
+                num = parseInt(num);
+                for(he=0,j=1;j<=num;j++){
+                    for(sum=1,i=1;i<=j;i++){
+                    sum *= i;
+                    }
+                    he += sum
+                }
+                document.write(num+"的he阶乘是"+he); 
+               
+        </script> -->
+        <!-- <script>
+        for(var i=1;i<=5;i++){
+            for(var n=5;n>i;n--){
+                document.write("&nbsp;");
+            }
+            for(var j=1;j<=i;j++){
+                document.write("*&nbsp;");
+            }
+           document.write("</br>");
+        } 
+        </script> -->
+        <!-- 有一个三位数x，被4除余2，被7除余3，被9除余5，请求出这个数 -->
+        <!-- <script>
+            var x = "";
+       for( var i=100;i<1000;i++ ){
+        if(i%4==2 && i%7==3 && i%9==5){
+           console.log(i);   
+       }
+       }
+        </script> -->
+        <!-- 8.求所有满足条件的四位数ABCD，它是13的倍数，且第3位数加上第2位数等于第4位数（即：A=B+C）。
+        （提示：对于四位数的整数x，通过Math.floor(x/1000)可求出第4位的数字，其他位数的提取也类似）  -->
+            <script>
+               for(var x=1000;x<10000;x++){
+                   var A=Math.floor(x/1000)
+                   var B=Math.floor(x/100)%10
+                   var C=Math.floor(x/10)%10
+                // if(x%13==0 && Math.floor(x/1000) == Math.floor(x/100)%10+Math.floor(x/10%10)){
+                    if(x%13==0 && A == B+C){
+                    document.write(x);
+                    document.write("</br>");
+                }
+                
+              
+               }
+              
+            </script>
+</body>
+</html>

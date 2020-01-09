@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .box {
+        width: 600px;
+        height: 400px;
+        margin: 30px auto;
+        border: 3px solid blue;
+        position: relative;
+    }
+
+    .pic li {
+        width: 600px;
+        height: 400px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .pic img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .botton {
+        position: absolute;
+        bottom: 10px;
+        z-index: 101;
+        width: 100%;
+    }
+
+    .arrow {
+        float: left;
+    }
+
+    .arrow li {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background-color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 20px;
+        margin-left: 4px;
+    }
+
+    .number {
+        float: right;
+    }
+
+    .number li {
+        width: 20px;
+        height: 20px;
+        display: inline-block;
+        background-color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 20px;
+        margin-right: 4px;
+    }
+
+    .pic .active {
+        z-index: 50;
+        /* 加z-index必须有定位 */
+    }
+
+    .number .active {
+        background-color: brown;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="pic">
+            <ul>
+                <li class="active"><img src="./tu/1.jpg" alt=""></li>
+                <li><img src="./tu/2.jpg" alt=""></li>
+                <li><img src="./tu/3.png" alt=""></li>
+                <li><img src="./tu/4.png" alt=""></li>
+            </ul>
+        </div>
+        <div class="botton">
+            <ul class="arrow">
+                <li class="left">&lt;</li>
+                <li class="right">&gt;</li>
+            </ul>
+            <ul class="number">
+                <li class="active">1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var left = document.getElementsByClassName("left")[0];
+        var right = document.getElementsByClassName("right")[0];
+        var box = document.getElementsByClassName("box")[0];
+        var pic = document.getElementsByClassName("pic")[0].getElementsByTagName("li");
+        var num = document.getElementsByClassName("number")[0].getElementsByTagName("li");
+        var nowIndex = 0;
+        for (i = 0; i < num.length; i++) {
+            num[i].index = i;
+            num[i].onmouseover = function () {
+                for (var j = 0; j < num.length; j++) {
+                    num[j].className = "";
+                    pic[j].className = "";
+                }
+                this.className = "active"
+                pic[this.index].className = "active";
+            }
+        }
+        left.onclick = function () {
+            --nowIndex;
+
+            for (var j = 0; j < num.length; j++) {
+                num[j].className = "";
+                pic[j].className = "";
+            }
+            if (nowIndex < 0) {
+                nowIndex = 3;
+            }
+            num[nowIndex].className = "active";
+            pic[nowIndex].className = "active";
+        }
+        right.onclick = function () {
+            ++nowIndex;
+
+            for (var j = 0; j < num.length; j++) {
+                num[j].className = "";
+                pic[j].className = "";
+            }
+            if (nowIndex > 3) {
+                nowIndex = 0;
+            }
+            num[nowIndex].className = "active";
+            pic[nowIndex].className = "active";
+        }
+        function play() {
+            timer = setInterval(function () {
+                ++nowIndex;
+                if (nowIndex > 3) {
+                    nowIndex = 0;
+                }
+                for (var j = 0; j < num.length; j++) {
+                    num[j].className = "";
+                    pic[j].className = "";
+                }
+                num[nowIndex].className = "active";
+                pic[nowIndex].className = "active";
+            }, 2000)
+        }
+        box.onmouseover =function(){
+            clearInterval(timer);
+        }
+        box.onmouseout = function(){
+            play();
+        }
+        play();
+        
+    </script>
+</body>
+
+</html>

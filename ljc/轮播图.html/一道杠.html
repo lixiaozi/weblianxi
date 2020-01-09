@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>一道杠</title>
+</head>
+<style>
+    #box {
+        width: 400px;
+        height: 40px;
+        background-color: #ff0000;
+    }
+</style>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var oBox = document.querySelector("#box");
+        var timer = null;
+        oBox.onmouseover = function () {
+            var _this = this;
+            clearInterval(timer);
+            timer = setInterval(function () {
+                if (_this.offsetWidth >= 600) {
+                    clearInterval(timer);
+                } else {
+                    _this.style.width = (_this.offsetWidth + 10) + "px";
+                }
+            }, 40)
+        }
+        oBox.onmouseout = function () {
+            var _this = this;
+            clearInterval(timer);
+            timer = setInterval(function () {
+                if (_this.offsetWidth <= 400) {
+                    clearInterval(timer);
+                } else {
+                    _this.style.width = (_this.offsetWidth - 10) + "px";
+                }
+            }, 40)
+        }
+    </script>
+</body>
+
+</html>

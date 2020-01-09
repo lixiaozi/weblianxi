@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function chooseFood(){
+        var food = "";
+        var ran = parseInt(Math.random()*10);
+       switch(ran){
+            case 1:food = "a";break;
+            case 2:food = "b";break;
+            case 3:food = "c";break;
+            case 4:food = "d";break;
+            case 5:food = "e";break;
+            case 6:food = "f";break;
+            case 7:food = "g";break;
+            case 8:food = "h";break;
+            case 9:food = "";break;
+            default:food="bbb";
+        }
+        return food;
+    }
+    var isCon = confirm("是否就餐？");
+    if(isCon){
+      var num = prompt("请输入就餐人数：");
+      var foodList = [];
+      var userList = [];
+      for(var i=0;i<num;i++){
+          var userName =prompt("请输入第"+(i+1)+"个客人名字");
+          userList.push(userName);
+      }
+      for(var i = 0;i<num;i++){
+          foodList.push(userList[i]+"吃了"+chooseFood());
+      }
+      console.log(foodList);
+
+    }else
+    console.log("欢迎下次光临！");
+
+
+    
+    </script>
+</body>
+</html>

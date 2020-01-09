@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        // 编写程序，根据用户输入的数值，计算其平方、平方根和自然对数
+    var num = prompt("输入计算数字：");   
+    document.write(Math.sqrt(num)+"<br/>");
+    document.write(Math.pow(num,2)+"<br/>");
+    document.write(Math.LN10num);
+    </script> -->
+    <!-- 2.使用Math对象的random()方法编制一个产生0~100之间（含0,100）的随机整数的函数。 -->
+    <!-- <script>
+    var num = Math.floor(Math.random()*101);
+    document.write(num);
+    </script> -->
+    <!-- 设计一个页面，在页面上显示信息“现在是XXXX年XX月XX日Xx点XX分XX秒（星期X)，欢迎您的到访！ -->
+    <!-- <script>
+    var nowdate = new Date();
+
+    document.write("现在是"+nowdate.getFullYear()+"年"+"XX月XX日Xx点XX分XX秒（星期X)，欢迎您的到访！"+"星期"+(nowdate.getDay()+1)); 
+    </script> -->
+    <!-- 4.编制一个从字符串中收集数字字符（"0"',"1"，…"9"）的函数CollectDigits(s)，
+    它从字符串s中顺序取出数字，并且合并为一个独立的字符串作为函数的返回值。
+    例如函数调用CollectDigits("1abc23def4"）的返回值是字符串"1234"。 -->
+    <!-- <script>
+    var s = prompt("输入字符串：");
+    function CollectDigits(s){
+        new Array();
+        for(i=0;i<s.length;i++){
+            if(typeof(s.charAt(i))==Number){
+                Array.push(s.charAt(i))
+            }
+        }
+        return Array.toString();
+    }
+    document.write(CollectDigits());
+    </script> -->
+    <!-- 5.编制一个将两个字符串交叉合并的函数Merge(s1,s2)，
+    例如Merge("123","abc"）的返回结果是"1a2b3c"，如果两个字符串的长度不同，
+    那么就将多余部分直接合并到结果字符串的末尾，如Merge("123456",''abc''）的返回结果是”1a2b3c456”。 -->
+    <script>
+    function Merge(){
+        var s = prompt("输入字符串1：");
+        var s1 = prompt("输入字符串2：");
+        var a=s.length>s1.length?s.length:s1.length;
+        for(i = 0 ;i<a;i++){
+           s3 = s.charAt(i)+s1.charAt(i)+ s.substring(a)+s1.substring(a);
+        }
+    }
+    </script>
+</body>
+</html>

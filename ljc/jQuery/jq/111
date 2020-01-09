@@ -1,0 +1,11 @@
+1.js和原生对象互换
+var $box = $("#box");
+var oBox = document.getElementById("box");
+// console.log($box.get(0));
+console.log($(oBox))
+
+
+
+2.nthchild 1开头
+3.eq 0 开头 li：eq(3);
+4.keyup,keydown

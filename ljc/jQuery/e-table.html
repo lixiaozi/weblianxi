@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>可修改表格</title>
+    <script src="./jq/jquery-3.4.1.js"></script>
+    <style>
+    table{
+        margin: 0 auto;
+        border: black 1px solid;
+        border-collapse: collapse;
+        width: 500px;
+        margin-top: 100px;
+        text-align: center;
+    }
+    tr{
+        width: 50px;
+    }
+   .tbody th{
+        border: black 1px solid;
+        background-color:pink;
+    }
+    td{
+        border: solid 1px black;
+        width: 50%;
+    }
+    </style>
+</head>
+<body>
+    <table>
+        <th class="thead">
+            //<tbody>
+            <tr colspan="2"><h2>鼠标点击表格就可以编辑</h2></tr>
+        </th>
+        <div class="tbody">
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td class="e">aaa</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td class="e">bbb</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td class="e">ccc</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td class="e">ddd</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td class="e">eee</td>
+            </tr>
+        </div>
+    </table>
+    <script>
+       $(".e").on("click",function(){
+           if($(this).children().length<1){
+            var text =$(this).text();
+           var $input=$("<input type='text'>");
+           $input.val(text);
+           $(this).text("").append($input);
+           $input.focus();
+           }
+        $(".e").on("focusout", function(){
+             var thisval = $(this).find(":input").val()
+            $(this).text(thisval);
+        })  
+        $(".e").on("keydown",function(e){
+            if(e.keyCode == 13){
+               $(this).trigger("focusout")
+        }
+        })
+       
+       })
+    </script>
+</body>
+</html>

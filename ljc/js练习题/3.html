@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <!-- 6.设计一个程序，它（使用一个数组）接收用户输入的7门课程的成绩，
+        然后在页面上显示其总成绩和平均分，并列出小于60的成绩。 -->
+        <script>
+        var arr = [];
+        var sum = 0;
+        var prv = 0;
+        for( var i =1;i<=7;i++){
+            var num =window.prompt("please input your"+i+" classes's point:");
+            num = parseInt(num);//加法减法要取整，乘除不用。
+           // arr = arr.push(num); //因为arr=arr的长度，报错，查控制台 
+            arr.push(num);
+        }
+        for(var i= 0;i<7;i++){
+            sum +=arr[i];
+            if(arr[i]<60){
+                document.write("第"+(i+1)+"不及格"+arr[i]+"分"+"</br>")
+            }
+        }
+        document.write(sum+"</br>");
+        prv = parseInt(sum/7);
+        document.write(prv);
+        </script>
+</body>
+</html>

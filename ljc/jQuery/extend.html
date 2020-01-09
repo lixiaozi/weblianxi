@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ExtendMethod</title>
+    <script src="./jq/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        $.fn.extend({
+            fellow: function(obj) {
+                var defaultInfo = {
+                    name: "lili",
+                    age: "10"
+                }
+                $.extend(defaultInfo, obj)
+                $(this).html(
+                    "<h1>姓名：" + defaultInfo.name + "</h1>" +
+                    "<h1>年龄：" + defaultInfo.age + "</h1>"
+                )
+            }
+        })
+        $(".box").fellow({
+            age: "18"
+        });
+    </script>
+</body>
+
+</html>

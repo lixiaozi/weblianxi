@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            height: 300px;
+            width: 500px;
+            border: 5px solid wheat;
+            margin: 0 auto;
+            margin-top: 40px;
+        }
+
+        img {
+            height: 300px;
+            width: 500px;
+        }
+
+        li {
+            list-style: none;
+        }
+        .pic{
+            float: left;
+            /* display: inline-block;有空格 */
+        }
+        ul{
+            width: 500%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="botton">
+            <div class="left">&lt;</div>
+            <div class="right">&gt;</div>
+        </div>
+        <div>
+                <ul>
+                        <li class="pic"><div><img src="./tu/1.jpg" alt=""></div></li>
+                        <li class="pic"><div><img src="./tu/2.jpg" alt=""></div></li>
+                        <li class="pic"><div><img src="./tu/3.png" alt=""></div></li>
+                        <li class="pic"><div><img src="./tu/4.png" alt=""></div></li>
+                    </ul>
+        </div>
+       <div>
+            <ul>
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+       </div>
+        
+
+    </div>
+</body>
+
+</html>

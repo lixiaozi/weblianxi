@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TAB</title>
+</head>
+<script src="./jq/jquery-3.4.1.js"></script>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    #box {
+        border: 1px solid black;
+        width: 602px;
+        margin: 0 auto;
+        margin-top: 50px;
+        height: 300px;
+    }
+    
+    .aa {
+        float: left;
+        width: 200px;
+        height: 60px;
+        background-color: blue;
+        color: white;
+        text-align: center;
+        line-height: 60px;
+    }
+    
+    .bb {
+        border-right: 1px solid white;
+    }
+    
+    li {
+        list-style: none;
+        text-align: left;
+        margin-left: 50px;
+        display: none;
+    }
+    
+    .nav {
+        /* overflow: hidden; */
+        border-bottom: 1px solid black;
+    }
+    
+    .clearfix::after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        /* visibility: hidden; */
+    }
+    
+    .on {
+        background-color: #666666;
+        color: black;
+    }
+    
+    .cc {
+        display: block;
+    }
+</style>
+
+<body>
+    <div id="box">
+        <div class="nav clearfix">
+            <div class="aa bb">1</div>
+            <div class="aa bb">2</div>
+            <div class="aa">3 </div>
+        </div>
+        <div class="content">
+            <ul>
+                <li>111</li>
+                <li>222</li>
+                <li>333</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        $(".aa").mouseover(function() {
+            $(this).addClass("on").siblings().removeClass("on");
+            $(".content li").eq($(this).index()).addClass("cc").siblings().removeClass("cc");
+        })
+    </script>
+</body>
+
+</html>

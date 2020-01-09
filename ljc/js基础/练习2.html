@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>计算</title>
+</head>
+<body>
+    <!-- <script>
+    var x = prompt("输入X的值：");
+    x = parseInt(x);
+    document.write(x);
+    document.write("</br>");
+    var sum = 4*x*x+3*x+2;
+    document.write(sum);
+    </script> -->
+    <!-- 2.编写一个函数Min(x,y)求出x,y这两个数中的最小值
+    要求x,y的值由用户通过提示对话框输入。 -->
+    <!-- <script>
+    var x = prompt("输入X的值：");
+    x = parseInt(x);
+    var y = prompt("输入y的值：");
+    y = parseInt(y);
+ 
+        function Min(){
+            if(x>y){
+            var xiaode = y;
+        }else{
+            xiaode = x;
+        }
+        return xiaode
+        }
+      
+    document.write(Min());
+    
+    </script> -->
+    <!-- 3.编写一个判断某个非负整数是否能够同时被3,5,7整除的函数，
+    然后在页面上输出1~1000之间所有能同时被3,5,7整除的整数，并要求每行显示6个这样的数。 -->
+    <!-- <script>
+        var x=0
+        for(var i = 1;i <= 1000;i++){
+            if(i%3==0 && i%5==0 && i%7==0){
+                document.write(i);
+                document.write("&nbsp;");
+                x=x+1
+                if(x%6==0) document.write("<br/>");
+            }
+           
+}
+    </script> -->
+    <!-- 在页面上编程输出100~1000之间的所有素数，并要求每行显示6个素数。 -->
+    <script>
+        function foo(n){
+            for(var i=2;i<n;i++){
+                if(n%i==0){
+                    return false;
+                }else{
+                    return true;
+                }
+            }
+        }
+        var a=0;
+            for(var i=100;i<1000;i++){
+                if(foo(i)){
+                    document.write(i+"&nbsp;");
+                    a++;
+                    if(a%6==0){
+                        document.write("<br/>");
+                    }
+                }
+            }
+
+                
+       
+    </script>
+
+
+
+
+</body>
+</html>

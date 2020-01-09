@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 500px;
+        height: 90px;
+        background-color: coral;
+        margin-bottom: 50px;
+    }
+</style>
+<body>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+        var oBox = document.getElementsByClassName("box");
+        // console.log(oBox);
+        var timer = null;
+        for (var i = 0; i < oBox.length; i++) {
+            oBox[i].timer = i;
+            oBox[i].onmouseover = function () {
+                var _this = this;
+                clearInterval(this.timer);
+                this.timer = setInterval(function () {
+                    if (_this.offsetWidth == 1000) {
+                        clearInterval(_this.timer)
+                    } else {
+                        _this.style.width = (_this.offsetWidth+10)+"px";
+                    }
+                }, 16)
+
+            }
+            oBox[i].onmouseout = function () {
+                var _this = this;
+                clearInterval(this.timer);
+                this.timer = setInterval(function () {
+                    if (_this.offsetWidth == 500) {
+                        clearInterval(_this.timer)
+                    } else {
+                        _this.style.width = (_this.offsetWidth-10)+"px";
+                    }
+                }, 16)
+
+            }
+        }
+    </script>
+</body>
+
+</html>

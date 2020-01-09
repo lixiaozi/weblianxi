@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>find</title>
+    <script src="./jq/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>a</li>
+        <li>b</li>
+        <li>c输入账号密码</li>
+        <li>d</li>
+        <li>e</li>
+    </ul>
+    <script>
+        // $("li:odd").css({
+        //     color: "red"
+        // });
+        // $("li:eq(2)").css({
+        //     color: "blue"
+        // })
+        $("li:lt(1)").css({
+                color: "yellow"
+            })
+            // 选择小于index的:lt 选择器选取带有小于指定 index 值的元素。
+
+        // index 值从 0 开始。
+
+        // 经常与其他元素/选择器一起使用，来选择指定的组中特定序号之前的元素（如上面的例子）。
+        $("li:contains(号)").css({
+            color: "pink"
+        })
+    </script>
+</body>
+
+
+</html>

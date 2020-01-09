@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: #f00;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        var oBox = document.getElementsByClassName("box")[0];
+        oBox.onmousedown = function(e){
+            var thisLeft =e.clientX - oBox.offsetLeft;
+            var thisTop = e.clientY - oBox.offsetTop;
+
+            document.onmousemove = function(e){
+            console.log(e.clientX,e.clientY);
+            oBox.style.left = e.clientX - thisLeft +"px";
+            oBox.style.top = e.clientY - thisTop +"px";
+        }
+        }
+        // oBox.onmousemove = function(){
+        //     console.log("move");
+        // }
+        oBox.onmouseup = function(){
+            console.log("up");
+          document.onmousemove = null;
+        }
+        //鼠标移动太快失焦，脱离box区域。定位到全局对象上。
+    </script>
+</body>
+
+</html>

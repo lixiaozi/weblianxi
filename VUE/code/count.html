@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Count</title>
+    <script src="../js/vue.js"></script>
+    <style>
+        button {
+            width: 30px;
+            background-color: #f00;
+        }
+        
+        #number {
+            border: black 1px solid;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>
+        <div id="number">current number:{{ count }}
+            <br>
+            <button v-on:click="add">+</button>
+            <button @click="sub">-</button></div>
+    </h2>
+
+
+    <script>
+        const app = new Vue({
+            el: "#number",
+            data: {
+                count: 0
+            },
+            methods: {
+                add: function() {
+                    console.log("addadd");
+
+                    this.count++;
+                },
+                sub: function() {
+                    console.log("subsub");
+
+                    this.count--;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

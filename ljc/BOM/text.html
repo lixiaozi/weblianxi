@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* .body{
+            text-align: center;
+        } */
+    .container{
+        width: 400px;
+        height: 300px;
+        background-color: #00f;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        margin-top:-150px;
+        margin-left: -200px;
+        text-align: center;
+    }
+    #as{
+        margin:80px;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+            <div id="as">90</div>
+            <button class="btn">开始</button>
+            <script>
+            var oBtn = document.getElementsByTagName("button")[0];
+            var oDiv = document.getElementById("as");
+            var isstop = true;
+            var timer = null;
+            oBtn.onclick = function(){
+                isstop =!isstop;
+                console.log(isstop);
+                if(isstop){
+                    clearInterval(timer);
+                    oBtn.innerText = "开始";
+                }else{
+                timer = window.setInterval(function(){
+                 --oDiv.innerText;
+                }
+            ,1000)
+            oBtn.innerText = "暂停";
+            }
+           
+  }
+            
+             </script>
+
+    </div>
+   
+    
+</body>
+</html>

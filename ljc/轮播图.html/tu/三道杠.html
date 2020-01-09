@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三道杠</title>
+</head>
+<style>
+    div {
+        width: 400px;
+        height: 80px;
+        background-color: red;
+        margin-bottom: 40px;
+    }
+</style>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <script>
+        var obj = document.querySelectorAll("div");
+        for (var i = 0; i < obj.length; i++) {
+            obj[i].timer = null;
+            obj[i].onmouseover = function () {
+                clearInterval(this.timer);
+                var _this = this;
+                 this.timer = setInterval(function () { 
+                    if( _this.offsetWidth == 600){
+                        clearInterval(_this.timer);
+                    }else{
+                        _this.style.width = (_this.offsetWidth + 10) + "px";
+                    }
+                }, 100)
+            }
+            obj[i].onmouseout = function () {
+                clearInterval(this.timer);
+                var _this = this;
+                 this.timer = setInterval(function () { 
+                    if( _this.offsetWidth == 400){
+                        clearInterval(_this.timer);
+                    }else{
+                        _this.style.width = (_this.offsetWidth - 10) + "px";
+                    }
+                }, 100)
+            }
+        }
+    </script>
+</body>
+
+</html>

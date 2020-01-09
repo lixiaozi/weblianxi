@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #000;
+    }
+
+    .box {
+        position: relative;
+        width: 500px;
+        height: 350px;
+        border: 5px solid white;
+        margin: 20px auto;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .picture img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .picture li {
+        position: absolute;
+        height: 350px;
+        z-index: 100;
+        top: 0;
+        left: 0;
+    }
+
+    .botton {
+        position: absolute;
+        z-index: 220;
+        bottom: 30px;
+        width: 100%;
+    }
+
+    .arrow {
+        float: left;
+        position: absolute;
+        left: 10px;
+    }
+
+    .arrow li {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #0f0;
+        text-align: center;
+        line-height: 20px;
+    }
+
+    .number {
+        position: absolute;
+        float: right;
+        right: 10px;
+    }
+
+    .number li {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #0f0;
+        text-align: center;
+        line-height: 20px;
+    }
+
+    .picture .active {
+
+        z-index: 150;
+    }
+
+    .number .active {
+        background-color: #f00;
+        color: #fff;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <div class="picture">
+            <ul>
+                <li class="active"><img src="./tu/1.jpg" alt=""></li>
+                <li><img src="./tu/2.jpg" alt=""></li>
+                <li><img src="./tu/3.png" alt=""></li>
+                <li><img src="./tu/4.png" alt=""></li>
+            </ul>
+        </div>
+        <div class="botton">
+            <div class="arrow">
+                <ul>
+                    <li>&lt;</li>
+                    <li>&gt;</li>
+                </ul>
+            </div>
+            <div class="number">
+                <ul>
+                    <li class="active">1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+        var img = document.getElementsByClassName("picture")[0].getElementsByTagName("li");
+        var num = document.getElementsByClassName("number")[0].getElementsByTagName("li");
+        var arrow = document.getElementsByClassName("arrow")[0].getElementsByTagName("li");
+        var box = document.getElementsByClassName("box")[0];
+        var now = 0;
+        function change(index) {
+            now = index;
+            for (var j = 0; j < num.length; j++) {
+                img[j].className = "";
+                num[j].className = "";
+            }
+            img[index].className = "active";
+            num[index].className = "active";
+        }
+        for (var i = 0; i < num.length; i++) {
+            num[i].index = i;
+            num[i].onmouseover = function () {
+                change(this.index);
+            }
+        }
+        arrow[0].onclick = function () {
+            --now;
+            if (now < 0) {
+                now += 4;
+            }
+            change(now);
+        }
+        arrow[1].onclick = function () {
+            ++now;
+            if (now % 4 == 0) {
+                now = 0;
+            }
+            change(now);
+        }
+        function play() {
+             timer = setInterval(function () {
+                ++now;
+                if (now % 4 == 0) {
+                    now = 0;
+                }
+                change(now);
+            }, 1500)
+        }
+        box.onmouseover = function () {
+            clearInterval(timer);
+        }
+        box.onmouseout = function () {
+            play();
+        }
+        play();
+    </script>
+</body>
+
+</html>

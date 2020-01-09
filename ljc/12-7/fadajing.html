@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>放大镜</title>
+    <style>
+        #small {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border: 3px solid black;
+            float: left;
+            margin-right: 10px;
+            background-image: url(0.jpg);
+            background-size: 100%;
+        }
+
+        #big {
+            width: 400px;
+            height: 400px;
+            border: 3px solid black;
+            float: left;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #loupe {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            opacity: 0.5;
+            position: absolute;
+        }
+        img{
+            width: 800px;
+            height: 800px;
+            /* width: 200%;
+            height: 200%; */
+            position: absolute;
+            /* overflow: hidden;加给父级，显示子元素 */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="small">
+        <div id="loupe"></div>
+    </div>
+    <div id="big">
+        <img src="0.jpg" alt="">
+    </div>
+    <script>
+        var oLoupe = document.getElementById("loupe");
+        var oSmall = document.getElementById("small");
+        var oImg = document.getElementsByTagName("img")[0];
+        //console.log(oImg);
+        
+        oLoupe.onmousedown = function (e) {      
+            var thisLeft = e.clientX - oLoupe.offsetLeft;
+            var thisTop = e.clientY - oLoupe.offsetTop;
+            // console.log(thisLeft,thisTop);
+            // console.log("2",oLoupe.offsetLeft,oLoupe.offsetTop);
+            
+       oSmall.onmousemove = function (e) {    
+            oLoupe.style.left = e.clientX - thisLeft + "px";
+            oLoupe.style.top = e.clientY - thisTop + "px"; 
+            oImg.style.left = -2*oLoupe.offsetLeft + "px";
+            oImg.style.top = -2*oLoupe.offsetTop + "px";//left没改成top啊啊啊啊@！！！！！！！！！！！！
+
+
+                 if(oLoupe.offsetLeft <=0){
+                    oLoupe.style.left = 0+"px";
+                    oImg.style.left = 0 + "px";
+                 }
+                 if(oLoupe.offsetLeft >=200){
+                    oLoupe.style.left = 200+"px";
+                    oImg.style.left =-400 + "px";
+                 }
+                 if(oLoupe.offsetTop <=0){
+                    oLoupe.style.top = 0+"px";
+                    oImg.style.top = 0 + "px";
+                 }
+                 if(oLoupe.offsetTop >=200){
+                    oLoupe.style.top = 200+"px";
+                    oImg.style.top = -400 + "px";
+                 }
+                    
+                 
+                 
+                 
+                 
+            }
+        }
+    
+    </script>
+</body>
+
+</html>

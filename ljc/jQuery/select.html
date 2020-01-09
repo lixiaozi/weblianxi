@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Select</title>
+    <style>
+        #select1,
+        #select2 {
+            width: 200px;
+            height: 300px;
+        }
+        
+        .container {
+            float: left;
+            margin-left: 20px;
+            text-align: center;
+        }
+    </style>
+    <script src="./jq/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <select multiple="multiple" name="" id="select1">
+    <option value="">1</option>
+    <option value="">2</option>
+    <option value="">3</option>
+    <option value="">4</option>
+    <option value="">5</option>
+    </select>
+        <div><button id="add">向左&gt;</button>
+            <button id="add_all">全向左&gt;&gt;</button></div>
+    </div>
+    <div class="container">
+        <select multiple="multiple" name="" id="select2">
+        <option value="">6</option>
+        <option value="">7</option>
+        <option value="">8</option>
+        <option value="">9</option>
+        <option value="">10</option>
+        </select>
+        <div><button id="remove">向右&lt;</button>
+            <button id="remove_all">全向右&lt;&lt;</button>
+        </div>
+    </div>
+    <script>
+        // $("#select1 option").bclick(function() {
+        //     $("#selecr2").add
+        // })
+        $("#select1").on("dblclick", "option", function() {
+            $(this).appendTo($("#select2"));
+        })
+        $("#select2").on("dblclick", "option", function() {
+            $(this).appendTo($("#select1"));
+        })
+        $("#add").on("click", function() {
+            $("#select1 option:selected").appendTo($("#select2"))
+        })
+        $("#remove").on("click", function() {
+            $("#select2 option:selected").appendTo($("#select1"));
+        })
+        $("#add_all").on("click", function() {
+            $("#select1 option").appendTo($("#select2"))
+        })
+        $("#remove_all").on("click", function() {
+            $("#select2 option").appendTo($("#select1"))
+        })
+    </script>
+
+</body>
+
+</html>

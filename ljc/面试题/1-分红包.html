@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>百度作业帮</title>
+</head>
+
+<body>
+    <!-- 发一个随机红包，100块钱分给10个人。每个人最少分5元。怎么分？ -->
+    <script>
+        //  100  10   max 12 min 6
+        var count = 0;
+        var redPacket = [];
+
+        function getAmount(totalAmount, number, max, min) {
+            count++;
+
+            var usedAmount = 0;
+            var amountList = [];
+
+            for (var i = 0; i < number - 1; i++) {
+                var amount = parseFloat((Math.random() * (max - min)).toFixed(2));
+
+                amountList[i] = amount;
+                usedAmount += amount;
+            }
+
+            var balance = totalAmount - min * number - usedAmount;
+
+            amountList[9] = balance;
+
+            if (balance > (max - min) || balance < 0) {
+                getAmount(totalAmount, number, max, min);
+            } else {
+                usedAmount = 0;
+                for (var i = 0; i < number; i++) {
+                    redPacket[i] = (6 + amountList[i]).toFixed(2);
+                    usedAmount += parseFloat(redPacket[i]);
+                }
+                // 确认总额是否是100
+                console.warn(usedAmount.toFixed(2));
+                // 打印每个红包金额
+                console.info(redPacket);
+                console.info('计算次数：' + count);
+            }
+        }
+        getAmount(100, 10, 12, 6);
+    </script>
+</body>
+
+</html>

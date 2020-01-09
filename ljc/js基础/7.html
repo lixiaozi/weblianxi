@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        function foo(){
+        var arr=(7);
+        for(i=0;i<7;i++){
+            if(arr[i]<=60){
+                console.log(arr[i]);
+            }
+            var sum = 0;
+            sum += arr[i]
+        }
+        return sum/7;
+        }
+      
+    
+    </script> -->
+    <script>
+    var arr = [];
+    function Fibonacci(n){
+        if(n==1||n==2){
+            return 1;
+        }else{
+            return  Fibonacci(n-1)+Fibonacci(n-2);
+        }
+    } 
+    
+    for(i=1;i<=40;i++){
+        arr.push(Fibonacci(i));     
+    }
+    arr.reverse();
+    for(var i=0;i<40;i++){
+        document.write(arr[i]+"&nbsp;")
+        if((i=1)%6==0)
+        document.write("<br/>");
+    }
+</script>
+</body>
+</html>
